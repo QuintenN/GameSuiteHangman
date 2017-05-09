@@ -44,22 +44,36 @@ public class Tekening {
 				}
 			}
 		}
+		if(vorm instanceof Cirkel){
+			Cirkel c = (Cirkel) vorm;
+			if(c.getMiddelpunt().getX()-c.getRadius()<this.getMinX() || c.getMiddelpunt().getY()-c.getRadius()<this.getMinY() || c.getMiddelpunt().getX()+c.getRadius()>this.getMaxX() || c.getMiddelpunt().getY()+c.getRadius()>this.getMaxY()){
+				throw new DomainException();
+			}
+		}
+		if(vorm instanceof Rechthoek){
+			Rechthoek h = (Rechthoek) vorm;
+			if(h.getLinkerBovenhoek().getX()<this.getMinX() || h.getLinkerBovenhoek().getX()>this.getMaxX() || h.getLinkerBovenhoek().getY()<this.getMinY() || h.getLinkerBovenhoek().getY()>this.getMaxY()){
+				if(h.getLinkerBovenhoek().getX()+h.getBreedte()>this.getMaxX() || h.getLinkerBovenhoek().getY()+h.getHoogte() > this.getMaxY()){
+					throw new DomainException();
+				}
+			}
+		}
 		vormen.add(vorm);
 	}
 	
-	public static int getMinX() {
+	public int getMinX() {
 		return MIN_X;
 	}
 
-	public static int getMinY() {
+	public int getMinY() {
 		return MIN_Y;
 	}
 
-	public static int getMaxX() {
+	public int getMaxX() {
 		return MAX_X;
 	}
 
-	public static int getMaxY() {
+	public int getMaxY() {
 		return MAX_Y;
 	}
 
