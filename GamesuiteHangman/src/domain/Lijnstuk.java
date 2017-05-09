@@ -5,20 +5,20 @@ public class LijnStuk {
 	private Punt eindPunt;
 	
 	public LijnStuk(Punt startPunt, Punt eindPunt){
-		setStartPunt(startPunt);
-		setEindPunt(eindPunt);
+		setStartEnEindPunt(startPunt, eindPunt);
+		
 	}
 
-	private Punt getStartPunt() {
+	public Punt getStartPunt() {
 		return startPunt;
 	}
 	
-	private Punt getStartPunt() {
+	public Punt getEindPunt() {
 		return eindPunt;
 	}
 
-	private void setStartEnEindPunt(Punt startPunt, Punt eindPunt) {
-		if(startPunt == null){
+	public void setStartEnEindPunt(Punt startPunt, Punt eindPunt) {
+		if(startPunt == null || eindPunt == null){
 			throw new DomainException("Startpunt en Eindpunt mogen niet leeg zijn");
 		}
 		this.startPunt = startPunt;
@@ -29,18 +29,17 @@ public class LijnStuk {
 	public boolean equals(Object o){
 		boolean result = false;
 		
-		if(p instanceof LijnStuk){
+		if(o instanceof LijnStuk){
 			LijnStuk l = (LijnStuk) o;
 			if(this.getStartPunt().equals(l.getStartPunt()) && this.getEindPunt().equals(l.getEindPunt())){
 				result = true;
 			}
-			return result;
 			}
+		return result;
 		}
-	}
 
 	@Override
 	public String toString(){
-		String out = "Lijn: startpunt: " + startPunt.toString() + " - eindpunt: " + eindPunt.toString();		
+		return "Lijn: startpunt: " + startPunt.toString() + " - eindpunt: " + eindPunt.toString();		
 	}
 }
