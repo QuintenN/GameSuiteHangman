@@ -1,6 +1,6 @@
 package domain;
 
-public class Driehoek{
+public class Driehoek extends Vorm{
 	private Punt hoekPunt1;
 	private Punt hoekPunt2;
 	private Punt hoekPunt3;
@@ -32,7 +32,21 @@ public class Driehoek{
 		return hoekPunt3;
 	}
 	
+	@Override
+	public boolean equals(Object o){
+		boolean result = false;
+		
+		if(o instanceof Driehoek){
+			Driehoek d = (Driehoek) o;
+			if(this.getHoekPunt1().equals(d.getHoekPunt1()) && this.getHoekPunt2().equals(d.getHoekPunt2()) && this.getHoekPunt3().equals(d.getHoekPunt3())){
+				result = true;
+			}
+			}
+		return result;
+		}
 
-	
-	
+	@Override
+	public String toString(){
+		return "Driehoek: hoekpunt1: " + hoekPunt1.toString() + " - hoekpunt2: " + hoekPunt2.toString() + " - hoekpunt3: " + hoekPunt3.toString();		
+	}
 }
