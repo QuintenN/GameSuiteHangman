@@ -1,10 +1,7 @@
 package domain;
 
 
-public class Cirkel {
-	
-	
-	
+public class Cirkel  extends Vorm {
 
 	private int radius;
 	private Punt middelpunt;
@@ -17,7 +14,7 @@ public class Cirkel {
 	}
 	private void setRadius(int radius) {
 		if(radius<=0){
-			throw new IllegalArgumentException("radius moet groter zijn dan nul");
+			throw new DomainException("radius moet groter zijn dan nul");
 		}
 		this.radius = radius;
 	}
@@ -25,8 +22,8 @@ public class Cirkel {
 		return middelpunt;
 	}
 	private void setMiddelpunt(Punt middelpunt) {
-		if(middelpunt==null){
-			throw new IllegalArgumentException("middelpunt mag niet leeg zijn ");
+		if(middelpunt == null){
+			throw new DomainException("middelpunt mag niet leeg zijn ");
 		}
 		this.middelpunt = middelpunt;
 	}
@@ -34,7 +31,7 @@ public class Cirkel {
 	@Override
 	public boolean equals(Object o){
 		if (o==null){
-			throw new IllegalArgumentException("crikel mag niet leeg zijn ");
+			throw new DomainException("crikel mag niet leeg zijn ");
 		}
 		if(o instanceof Cirkel  ){	
 			Cirkel c= (Cirkel)o;

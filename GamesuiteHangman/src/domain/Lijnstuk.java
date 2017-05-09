@@ -1,12 +1,11 @@
 package domain;
 
-public class LijnStuk {
+public class LijnStuk extends vorm {
 	private Punt startPunt;
 	private Punt eindPunt;
 	
 	public LijnStuk(Punt startPunt, Punt eindPunt){
 		setStartEnEindPunt(startPunt, eindPunt);
-		
 	}
 
 	public Punt getStartPunt() {
