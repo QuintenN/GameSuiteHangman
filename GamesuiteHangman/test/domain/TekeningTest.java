@@ -51,6 +51,29 @@ public class TekeningTest {
 		Tekening huis = createHuisZonderShouw();
 		assertEquals(7, huis.getAantalVormen());
 	}
+	
+	@Test 
+	public void voegToe_voeg_gegeven_vorm_toe() {
+		Tekening huis = new Tekening("huis");
+		huis.voegToe(dak);
+		assertTrue(huis.bevat(dak));
+	}
+	
+	@Test 
+	public void getVorm_geef_gegeven_vorm() {
+		Tekening huis = new Tekening("huis");
+		huis.voegToe(dak);
+		huis.getVorm(0);
+		assertEquals(dak, huis.vormen.get(0));
+	}
+	
+	@Test 
+	public void Verwijder_verwijdert_gegeven_vorm() {
+		Tekening huis = new Tekening("huis");
+		huis.voegToe(dak);
+		huis.verwijder(dak);
+		assertEquals(0, huis.getAantalVormen());
+	}
 
 	@Test
 	public void bevat_geeft_true_als_gegeven_vorm_deel_uitmaakt_van_de_tekening(){
