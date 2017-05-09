@@ -1,10 +1,10 @@
 package domain;
 
-public class Lijnstuk {
+public class LijnStuk {
 	private Punt startPunt;
 	private Punt eindPunt;
 	
-	public Lijnstuk(Punt startPunt, Punt eindPunt){
+	public LijnStuk(Punt startPunt, Punt eindPunt){
 		setStartPunt(startPunt);
 		setEindPunt(eindPunt);
 	}
@@ -30,7 +30,7 @@ public class Lijnstuk {
 		boolean result = false;
 		
 		if(p instanceof LijnStuk){
-			Lijnstuk l = (Lijnstuk) o;
+			LijnStuk l = (LijnStuk) o;
 			if(this.getStartPunt().equals(l.getStartPunt()) && this.getEindPunt().equals(l.getEindPunt())){
 				result = true;
 			}
