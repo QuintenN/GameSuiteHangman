@@ -82,4 +82,9 @@ public class RechthoekTest {
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		assertFalse(rechthoek.equals(null));
 	}
+	
+	@Test
+	public void getOmhullende_geeft_juiste_strings_terug(){
+		assertEquals(rechthoek.getOmhullende(),"Omhullende: (200, 200) - 20 - 40");
+	}
 }

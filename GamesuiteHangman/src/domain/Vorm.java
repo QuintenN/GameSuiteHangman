@@ -2,6 +2,11 @@ package domain;
 
 public class Vorm {
 	
+	public String getOmhullende(){
+		Omhullende o = new Omhullende(, breedte, hoogte);
+		return o.toString();
+	}
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

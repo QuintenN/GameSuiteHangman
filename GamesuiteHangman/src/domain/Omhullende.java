@@ -45,6 +45,23 @@ public class Omhullende {
 		
 		this.hoogte = hoogte;
 	}
+	
+	public int getMinX(){
+		return positieLinksBoven.getX();
+	}
+	
+	public int getMinY(){
+		return positieLinksBoven.getY();
+	}
+	
+	public int getMaxX(){
+		return positieLinksBoven.getX() + breedte;
+	}
+
+	public int getMaxY(){
+		return positieLinksBoven.getY()+ hoogte;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		boolean result = false;
