@@ -1,7 +1,7 @@
 package domain;
 
 
-public class Cirkel {
+public class Cirkel extends Vorm{
 	
 	
 	
