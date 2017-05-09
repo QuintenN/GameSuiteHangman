@@ -29,9 +29,18 @@ public class Lijnstuk {
 	public boolean equals(Object o){
 		boolean result = false;
 		
-		if(p instanceof Punt){
-			Punt p = (Punt o);
-			if(this)
+		if(p instanceof LijnStuk){
+			Lijnstuk l = (Lijnstuk) o;
+			if(this.getStartPunt().equals(l.getStartPunt()) && this.getEindPunt().equals(l.getEindPunt())){
+				result = true;
+			}
+			return result;
+			}
 		}
+	}
+
+	@Override
+	public String toString(){
+		String out = "Lijn: startpunt: " + startPunt.toString() + " - eindpunt: " + eindPunt.toString();		
 	}
 }
