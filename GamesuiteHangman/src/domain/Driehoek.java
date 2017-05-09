@@ -8,8 +8,6 @@ public class Driehoek extends Vorm{
 	public Driehoek(Punt hoekPunt1, Punt hoekPunt2, Punt hoekPunt3){
 		setHoekPunten(hoekPunt1,hoekPunt2,hoekPunt3);
 	}
-
-
 	public void setHoekPunten(Punt hoekPunt1 , Punt hoekPunt2, Punt hoekPunt3){
 		if((hoekPunt1 == null || hoekPunt2 == null || hoekPunt3 == null) || 
 		((hoekPunt2.getX() - hoekPunt1.getX()) * (hoekPunt3.getY()-hoekPunt1.getY()) == (hoekPunt3.getX() - hoekPunt1.getX()) * (hoekPunt2.getY()-hoekPunt1.getY()))){
