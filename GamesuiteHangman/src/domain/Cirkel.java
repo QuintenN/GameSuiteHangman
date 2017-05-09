@@ -21,7 +21,7 @@ public class Cirkel {
 		}
 		this.radius = radius;
 	}
-	private Punt getMiddelpunt() {
+	public Punt getMiddelpunt() {
 		return middelpunt;
 	}
 	private void setMiddelpunt(Punt middelpunt) {
