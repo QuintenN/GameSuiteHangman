@@ -104,11 +104,18 @@ public class Tekening {
 	@Override
 	public boolean equals(Object obj) {
 		boolean result = false;
-		
 		if (obj instanceof Tekening){
 			Tekening t = (Tekening) obj;
-			if(this.getNaam().equals(t.getNaam())){
-				result = true;
+			
+			if(this.getAantalVormen() == t.getAantalVormen()){
+				for(int i = 0; i<this.getAantalVormen(); i++){
+					
+					if( t.bevat(this.getVorm(i))){
+						
+							result = true;
+						
+					}
+				}
 			}
 		}
 		

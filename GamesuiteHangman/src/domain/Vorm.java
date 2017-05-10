@@ -3,7 +3,7 @@ package domain;
 public class Vorm {
 	
 	public String getOmhullende(){
-		Omhullende o = new Omhullende(, breedte, hoogte);
+		Omhullende o = new Omhullende(null, 0, 0);
 		return o.toString();
 	}
 	
