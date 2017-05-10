@@ -26,8 +26,8 @@ public class Tekening {
 	}
 	
 	public void voegToe(Vorm vorm){
-		if(vorm instanceof Lijnstuk){
-			Lijnstuk l = (Lijnstuk) vorm;
+		if(vorm instanceof LijnStuk){
+			LijnStuk l = (LijnStuk) vorm;
 			if(l.getStartPunt().getX()<this.getMinX() || l.getStartPunt().getX()>this.getMaxX() || l.getStartPunt().getY()<this.getMinY() || l.getStartPunt().getY()>this.getMaxY()){
 				if(l.getEindPunt().getX()<this.getMinX() || l.getEindPunt().getX()>this.getMaxX() || l.getEindPunt().getY()<this.getMinY() || l.getEindPunt().getY()>this.getMaxY()){
 					throw new DomainException();
