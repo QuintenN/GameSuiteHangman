@@ -18,6 +18,9 @@ public class Tekening {
 	}
 		
 	public void setNaam(String naam) {
+		if( naam==null ||naam.equals("")){
+			throw new IllegalArgumentException("naam mag niet leeg zijn");
+		}
 		this.naam = naam;
 	}
 
