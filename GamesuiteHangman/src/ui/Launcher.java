@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 import domain.Cirkel;
 import domain.DomainException;
 import domain.Driehoek;
-import domain.Lijnstuk;
+import domain.LijnStuk;
 import domain.Punt;
 import domain.Rechthoek;
 import domain.Speler;
@@ -171,7 +171,7 @@ public class Launcher {
 				
 				Punt beginpunt = new Punt(xbeginPunt, ybeginPunt);
 				Punt eindpunt = new Punt(xeindPunt, yeindPunt);
-				Lijnstuk lijnstuk = new Lijnstuk(beginpunt, eindpunt);
+				LijnStuk lijnstuk = new LijnStuk(beginpunt, eindpunt);
 				
 				boolean correctbeginPunt = false;
 				
@@ -205,7 +205,7 @@ public class Launcher {
 						}
 				}
 				
-				lijnstuk = new Lijnstuk(beginpunt, eindpunt);
+				lijnstuk = new LijnStuk(beginpunt, eindpunt);
 				JOptionPane.showMessageDialog(null, "U heeft een correct lijnstuk aangemaak: " + lijnstuk);
 				
 			break;
