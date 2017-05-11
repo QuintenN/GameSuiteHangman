@@ -15,8 +15,13 @@ public class Speler {
 	}
 
 	public void setNaam(String naam) {
-		if(naam == null || naam.trim().isEmpty()) throw new DomainException("De spelersnaam mag niet null of leeg zijn");
+		if(isGeldigeNaam(naam) == false) throw new DomainException("naam mag niet null of leeg zijn");
 		this.naam = naam;
+	}
+	
+	public static boolean isGeldigeNaam(String naam){
+		if(naam == null || naam.trim().isEmpty()) return false;
+		return true;
 	}
 
 	public int getScore() {
@@ -49,7 +54,7 @@ public class Speler {
 	
 	@Override
 	public String toString() {
-		return "De speler met naam" + getNaam() + " heeft als score " + getScore() + ".";
+		return "De speler met naam " + getNaam() + " heeft als score " + getScore();
 	}
 
 	

@@ -19,10 +19,15 @@ public class Rechthoek extends Vorm{
 
 
 		private void setBreedte(int breedte) {
-			if (breedte<=0){
-				throw new DomainException();
+			if (isGeldigeBreedte(breedte) == false){
+				throw new DomainException("Breedte mag niet kleiner zijn dan 0");
 			}
 			this.breedte = breedte;
+		}
+		
+		public static boolean isGeldigeBreedte(int breedte){
+			if(breedte <= 0) return false;
+			return true;
 		}
 
 
@@ -32,10 +37,15 @@ public class Rechthoek extends Vorm{
 
 
 		private void setHoogte(int hoogte) {
-			if (hoogte<=0){
-				throw new DomainException();
+			if (isGeldigeHoogte(hoogte)== false){
+				throw new DomainException("Hoogte mag niet kleiner zijn dan 0");
 			}
 			this.hoogte = hoogte;
+		}
+		
+		public static boolean isGeldigeHoogte(int hoogte){
+			if(hoogte <= 0) return false;
+			return true;
 		}
 
 
@@ -54,8 +64,7 @@ public class Rechthoek extends Vorm{
 
 		@Override
 		public String toString() {
-			return "Rechthoek [breedte=" + breedte + ", hoogte=" + hoogte + ", linkerbovenhoek=" + linkerbovenhoek
-					+ "]";
+			return "Rechthoek: " + getLinkerBovenhoek() + " - breedte: " + getBreedte() + " - hoogte: " + getHoogte();
 		}
 
 
@@ -68,11 +77,11 @@ public class Rechthoek extends Vorm{
 			if (getClass() != obj.getClass())
 				return false;
 			Rechthoek other = (Rechthoek) obj;
-			if (breedte != other.breedte)
+			if (this.breedte != other.breedte)
 				return false;
-			if (hoogte != other.hoogte)
+			if (this.hoogte != other.hoogte)
 				return false;
-			if (linkerbovenhoek == null) {
+			if (this.linkerbovenhoek == null) {
 				if (other.linkerbovenhoek != null)
 					return false;
 			} else if (!linkerbovenhoek.equals(other.linkerbovenhoek))

@@ -18,6 +18,7 @@ public class Tekening {
 	}
 		
 	public void setNaam(String naam) {
+		if(naam == null || naam.trim().isEmpty()) throw new DomainException("De naam van de Tekening mag niet leeg zijn");
 		this.naam = naam;
 	}
 
@@ -56,7 +57,8 @@ public class Tekening {
 		
 		if (obj instanceof Tekening){
 			Tekening t = (Tekening) obj;
-			if(this.getNaam().equals(t.getNaam())){
+			if(this.getNaam().equals(t.getNaam())
+					){
 				result = true;
 			}
 		}
