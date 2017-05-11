@@ -2,9 +2,6 @@ package domain;
 
 
 public class Cirkel extends Vorm{
-	
-	
-	
 
 	private int radius;
 	private Punt middelpunt;
@@ -51,6 +48,4 @@ public class Cirkel extends Vorm{
 	public String toString() {
 		return "Cirkel [radius=" + radius + "]";
 	}
-	
-
 }

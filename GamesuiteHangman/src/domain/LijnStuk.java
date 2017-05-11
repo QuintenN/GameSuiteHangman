@@ -5,8 +5,7 @@ public class LijnStuk extends Vorm{
 	private Punt eindPunt;
 	
 	public LijnStuk(Punt startPunt, Punt eindPunt){
-		setStartEnEindPunt(startPunt, eindPunt);
-		
+		setStartEnEindPunt(startPunt, eindPunt);		
 	}
 
 	public Punt getStartPunt() {

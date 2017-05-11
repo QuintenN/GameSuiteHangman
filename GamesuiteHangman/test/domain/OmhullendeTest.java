@@ -42,7 +42,7 @@ public class OmhullendeTest {
 		new Omhullende(linkerBovenhoek, breedte, -1);
 	}
 
-/*	@Test
+	@Test
 	public void Omhullende_Moet_omhullende_maken_als_breedte_gelijk_aan_0()  {
 		Omhullende omhullende = new Omhullende(linkerBovenhoek,0, hoogte);
 		assertEquals(0, omhullende.getBreedte());
@@ -52,7 +52,7 @@ public class OmhullendeTest {
 	public void Omhullende_Moet_omhullende_maken_als_hoogte_gelijk_aan_0()  {
 		Omhullende omhullende = new Omhullende(linkerBovenhoek,breedte, 0);
 		assertEquals(0, omhullende.getHoogte());
-	} */
+	} 
 	
 	@Test
 	public void equals_moet_true_teruggeven_als_linkerbovenhoek_breedte_hoogte_gelijk_zijn(){

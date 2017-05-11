@@ -18,9 +18,6 @@ public class Tekening {
 	}
 		
 	public void setNaam(String naam) {
-		if( naam==null ||naam.equals("")){
-			throw new IllegalArgumentException("naam mag niet leeg zijn");
-		}
 		this.naam = naam;
 	}
 
@@ -104,17 +101,11 @@ public class Tekening {
 	@Override
 	public boolean equals(Object obj) {
 		boolean result = false;
+		
 		if (obj instanceof Tekening){
 			Tekening t = (Tekening) obj;
-			
-			if(this.getAantalVormen() == t.getAantalVormen()){
+			if(this.getNaam().equals(t.getNaam())){
 				result = true;
-				for(int i = 0; i<this.getAantalVormen(); i++){
-					
-					if( !t.bevat(this.getVorm(i))){
-							result = false;
-					}
-				}
 			}
 		}
 		
