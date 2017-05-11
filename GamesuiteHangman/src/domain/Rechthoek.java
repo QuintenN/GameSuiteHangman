@@ -1,5 +1,8 @@
 package domain;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 public class Rechthoek extends Vorm{
 
 		private int breedte;
@@ -61,9 +64,9 @@ public class Rechthoek extends Vorm{
 			this.linkerbovenhoek = linkerbovenhoek;
 		}
 		
-		public String getOmhullende(){
+		public Omhullende getOmhullende(){
 			Omhullende o = new Omhullende(linkerbovenhoek, breedte, hoogte);
-			return o.toString();
+			return o;
 		}
 
 		@Override
@@ -91,6 +94,14 @@ public class Rechthoek extends Vorm{
 			} else if (!linkerbovenhoek.equals(other.linkerbovenhoek))
 				return false;
 			return true;
+		}
+
+
+		@Override
+		public void teken(Graphics graphics) {
+			graphics.setColor(Color.BLUE);
+			
+			
 		}
 		
 }

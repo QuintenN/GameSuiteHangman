@@ -1,5 +1,6 @@
 package domain;
 
+import java.awt.Graphics;
 
 public class Cirkel extends Vorm{
 
@@ -47,5 +48,10 @@ public class Cirkel extends Vorm{
 	@Override
 	public String toString() {
 		return "Cirkel [radius=" + radius + "]";
+	}
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 }

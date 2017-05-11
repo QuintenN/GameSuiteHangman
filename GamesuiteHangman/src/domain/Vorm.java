@@ -1,10 +1,12 @@
 package domain;
 
-public class Vorm {
+import java.awt.Graphics;
+
+public abstract class Vorm  implements Drawable{
 	
-	public String getOmhullende(){
+	public Omhullende getOmhullende(){
 		Omhullende o = new Omhullende(null, 0, 0);
-		return o.toString();
+		return o;
 	}
 	
 	@Override
@@ -18,5 +20,7 @@ public class Vorm {
 		// TODO Auto-generated method stub
 		return super.equals(obj);
 	}
+
+	
 
 }

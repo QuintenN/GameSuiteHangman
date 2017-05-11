@@ -1,8 +1,9 @@
 package domain;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 
-public class Tekening {
+public class Tekening implements Drawable{
 
 	private String naam;
 	ArrayList<Vorm> vormen;
@@ -112,5 +113,11 @@ public class Tekening {
 		}
 		
 		return result;
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 }

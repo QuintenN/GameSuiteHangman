@@ -1,5 +1,8 @@
 package domain;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 public class Driehoek extends Vorm{
 	private Punt hoekPunt1;
 	private Punt hoekPunt2;
@@ -46,5 +49,11 @@ public class Driehoek extends Vorm{
 	@Override
 	public String toString(){
 		return "Driehoek: hoekpunt1: " + hoekPunt1.toString() + " - hoekpunt2: " + hoekPunt2.toString() + " - hoekpunt3: " + hoekPunt3.toString();		
+	}
+	@Override
+	public void teken(Graphics graphics) {
+		graphics.setColor(Color.ORANGE);
+		//int puntX = {getHoekPunt().getX() }
+		
 	}
 }

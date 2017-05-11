@@ -1,4 +1,5 @@
 package domain;
+import java.awt.Graphics;
 
 public class LijnStuk extends Vorm{
 	private Punt startPunt;
@@ -40,5 +41,11 @@ public class LijnStuk extends Vorm{
 	@Override
 	public String toString(){
 		return "Lijn: startpunt: " + startPunt.toString() + " - eindpunt: " + eindPunt.toString();		
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 }

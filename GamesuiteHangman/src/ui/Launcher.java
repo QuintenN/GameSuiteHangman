@@ -8,23 +8,43 @@ import domain.LijnStuk;
 import domain.Punt;
 import domain.Rechthoek;
 import domain.Speler;
+import domain.Tekening;
 
 public class Launcher {
 
 	public static void main(String[] args) {
+		
+		Tekening tekening = new Tekening("naam");
+		Speler speler = new Speler("naam");
+		
+		
+		
 		
 		String naam = "";
 		
 		while(!Speler.isGeldigeNaam(naam)){
 		try {
 			naam = JOptionPane.showInputDialog("Welkom! \nHoe heet je?");
-			Speler speler = new Speler(naam);
+			speler = new Speler(naam);
 			JOptionPane.showMessageDialog(null," " + speler, " " + naam, JOptionPane.INFORMATION_MESSAGE);
 			
 		} catch (Exception e) {
 		JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
+		boolean correcteTekeningNaam = false;
+		
+		while (correcteTekeningNaam == false) {
+			try {
+				naam = JOptionPane.showInputDialog("Wat is de naam van de tekening");
+				tekening = new Tekening(naam);
+				JOptionPane.showMessageDialog(null," " + tekening, " " + naam, JOptionPane.INFORMATION_MESSAGE);
+				correcteTekeningNaam = true;
+			} catch (DomainException e) {
+				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
+
+		}
 		
 		boolean gevonden = false;
 		
@@ -64,7 +84,9 @@ public class Launcher {
 					try{
 				radius = Integer.parseInt(JOptionPane.showInputDialog("Radius van de cirkel:"));
 				Cirkel cirkel = new Cirkel(punt1, radius);
-				JOptionPane.showMessageDialog(null, "U heeft een correcte cirkel aangemaakt:" + cirkel);				
+				
+				JOptionPane.showMessageDialog(null, "U heeft een correcte cirkel aangemaakt:" + cirkel);
+				tekening.voegToe(cirkel);
 				correcteradius = true;
 				} catch (NumberFormatException e) {
 					JOptionPane.showMessageDialog(null, "Radius mag niet leeg zijn");
@@ -113,6 +135,7 @@ public class Launcher {
 				try {
 					breedte = Integer.parseInt(JOptionPane.showInputDialog("Breedte van de rechthoek:"));
 					rechthoek = new Rechthoek(punt2, breedte, hoogte);
+					tekening.voegToe(rechthoek);
 					breedtegevonden = true;
 				} catch (DomainException e) {
 					JOptionPane.showMessageDialog(null, e.getMessage());
@@ -206,6 +229,7 @@ public class Launcher {
 				}
 				
 				lijnstuk = new LijnStuk(beginpunt, eindpunt);
+				tekening.voegToe(lijnstuk);
 				JOptionPane.showMessageDialog(null, "U heeft een correct lijnstuk aangemaak: " + lijnstuk);
 				
 			break;
@@ -276,6 +300,7 @@ public class Launcher {
 			
 			try {
 				driehoek = new Driehoek(hoekPunt1, hoekPunt2, hoekPunt3);
+				tekening.voegToe(driehoek);
 				JOptionPane.showMessageDialog(null,	"U heeft een correcte driehoek aangemaakt: " + driehoek);
 			} catch (DomainException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage());
@@ -290,16 +315,9 @@ public class Launcher {
 			break;
 		}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		GameHoofdScherm view = new GameHoofdScherm(speler.getNaam(), tekening);
+		view.setVisible(true);
+		view.teken();
 		
 	}
 
