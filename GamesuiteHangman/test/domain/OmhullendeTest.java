@@ -52,7 +52,7 @@ public class OmhullendeTest {
 	public void Omhullende_Moet_omhullende_maken_als_hoogte_gelijk_aan_0()  {
 		Omhullende omhullende = new Omhullende(linkerBovenhoek,breedte, 0);
 		assertEquals(0, omhullende.getHoogte());
-	}
+	} 
 	
 	@Test
 	public void equals_moet_true_teruggeven_als_linkerbovenhoek_breedte_hoogte_gelijk_zijn(){
@@ -82,5 +82,25 @@ public class OmhullendeTest {
 	@Test
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		assertFalse(omhullende.equals(null));
+	}
+	
+	@Test
+	public void getMinX_geeft_minWaardeX(){
+		assertEquals(omhullende.getMinX(), omhullende.getLinkerBovenhoek().getX());
+	}
+	
+	@Test
+	public void getMinY_geeft_minWaardeY(){
+		assertEquals(omhullende.getMinY(), omhullende.getLinkerBovenhoek().getY());
+	}
+	
+	@Test
+	public void getMaxX_geeft_maxWaardeX(){
+		assertEquals(omhullende.getMaxX(), omhullende.getLinkerBovenhoek().getX()+omhullende.getBreedte());
+	}
+	
+	@Test
+	public void getMaxY_geeft_maxWaardeY(){
+		assertEquals(omhullende.getMaxY(), omhullende.getLinkerBovenhoek().getY()+omhullende.getHoogte());
 	}
 }

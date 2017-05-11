@@ -61,6 +61,10 @@ public class Rechthoek extends Vorm{
 			this.linkerbovenhoek = linkerbovenhoek;
 		}
 		
+		public String getOmhullende(){
+			Omhullende o = new Omhullende(linkerbovenhoek, breedte, hoogte);
+			return o.toString();
+		}
 
 		@Override
 		public String toString() {

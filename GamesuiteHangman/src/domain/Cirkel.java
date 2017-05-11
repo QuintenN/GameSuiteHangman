@@ -2,10 +2,9 @@ package domain;
 
 
 public class Cirkel extends Vorm{
-	
+
 	private int radius;
 	private Punt middelpunt;
-	
 	public Cirkel(Punt middelpunt, int radius){
 		setMiddelpunt(middelpunt);
 		setRadius(radius);
@@ -39,6 +38,7 @@ public class Cirkel extends Vorm{
 			
 			if( this.getRadius()==c.getRadius() && this.getMiddelpunt().equals( c.getMiddelpunt())){
 				return true;
+				
 			}
 		}
 		return false;
@@ -46,8 +46,6 @@ public class Cirkel extends Vorm{
 	
 	@Override
 	public String toString() {
-		return " Cirkel: middelpunt: " + middelpunt + " - straal: " + radius;
+		return "Cirkel [radius=" + radius + "]";
 	}
-	
-
 }
