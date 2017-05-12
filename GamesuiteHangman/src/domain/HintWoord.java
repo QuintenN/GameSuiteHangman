@@ -45,7 +45,6 @@ public class HintWoord {
 			}
 		
 		}
-		System.out.println(raden);
 		return raden;
 	}
 
