@@ -100,7 +100,7 @@ public class Rechthoek extends Vorm{
 		@Override
 		public void teken(Graphics graphics) {
 			graphics.setColor(Color.BLUE);
-			
+			graphics.drawRect(linkerbovenhoek.getX(), linkerbovenhoek.getY(), getBreedte(), getHoogte());
 			
 		}
 		

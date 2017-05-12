@@ -53,7 +53,9 @@ public class Driehoek extends Vorm{
 	@Override
 	public void teken(Graphics graphics) {
 		graphics.setColor(Color.ORANGE);
-		//int puntX = {getHoekPunt().getX() }
+		int puntX[] = {getHoekPunt1().getX(), getHoekPunt2().getX(), getHoekPunt3().getX()};
+		int puntY[] = {getHoekPunt1().getY(), getHoekPunt2().getY(), getHoekPunt3().getY()};
+		graphics.drawPolygon(puntX, puntY, 3);
 		
 	}
 }

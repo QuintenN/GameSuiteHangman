@@ -1,6 +1,8 @@
 package ui;
 
 import javax.swing.JOptionPane;
+import javax.swing.text.StyledEditorKit.ForegroundAction;
+
 import domain.Cirkel;
 import domain.DomainException;
 import domain.Driehoek;
@@ -102,12 +104,12 @@ public class Launcher {
 				boolean geldigpunt3 = false;
 				boolean geldigpunt4 = false;
 				
-				int xpunt2 = 0;
-				int ypunt2 = 0;
+				int xpunt2 = 1;
+				int ypunt2 = 1;
 				
-				Punt Rechthoekpunt = new Punt(0, 0);
+				Punt Rechthoekpunt = new Punt(1, 1);
 				
-				Rechthoek rechthoek = new Rechthoek(Rechthoekpunt, 0, 0);
+				Rechthoek rechthoek = new Rechthoek(Rechthoekpunt, 1, 1);
 				
 				while(geldigpunt3 == false && geldigpunt4 == false){
 			
@@ -310,14 +312,20 @@ public class Launcher {
 		case "Quit":
 				JOptionPane.showMessageDialog(null, "bedankt");
 				gevonden = true;
+				for (int i = 0; i < tekening.getAantalVormen(); i++) {
+					System.out.println(tekening.getVorm(i));
+				}
+				GameHoofdScherm view = new GameHoofdScherm(speler.getNaam(), tekening);
+				view.setVisible(true);
+				view.teken();
 			break;
 		default:
 			break;
 		}
 		}
-		GameHoofdScherm view = new GameHoofdScherm(speler.getNaam(), tekening);
-		view.setVisible(true);
-		view.teken();
+		
+		
+		
 		
 	}
 

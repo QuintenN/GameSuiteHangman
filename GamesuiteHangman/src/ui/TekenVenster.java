@@ -47,7 +47,7 @@ public class TekenVenster extends Canvas {
 				
 			}
 		};
-		Tekening tekening = new Tekening("");
+		Tekening tekening = new Tekening("naam");
 		for (int i = 0; i < tekening.getAantalVormen(); i++) {
 			vorm = tekening.getVorm(i);
 			if(vorm instanceof Cirkel){

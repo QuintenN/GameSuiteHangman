@@ -3,7 +3,7 @@ package domain;
 import java.awt.Graphics;
 
 public abstract class Vorm  implements Drawable{
-	
+	private boolean zichtbaar = true;
 	public Omhullende getOmhullende(){
 		Omhullende o = new Omhullende(null, 0, 0);
 		return o;
@@ -20,7 +20,13 @@ public abstract class Vorm  implements Drawable{
 		// TODO Auto-generated method stub
 		return super.equals(obj);
 	}
+	public boolean isZichtbaar(){
+		return zichtbaar;
+	}
 
+	public void setZichtbaar(boolean zichtbaar){
+		this.zichtbaar = zichtbaar;
+	}
 	
 
 }
