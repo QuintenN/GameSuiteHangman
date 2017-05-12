@@ -109,9 +109,13 @@ public class Tekening implements Drawable{
 		
 		if (obj instanceof Tekening){
 			Tekening t = (Tekening) obj;
-			if(this.getNaam().equals(t.getNaam())
-					){
+			if(this.getAantalVormen() == t.getAantalVormen()){
 				result = true;
+				for(int i = 0; i<this.getAantalVormen(); i++){
+					if(!t.bevat(this.getVorm(i))){
+						result = false;
+					}
+				}
 			}
 		}
 		
