@@ -17,6 +17,9 @@ public class HintWoord {
 	}
 
 	private void setWoord(String w) {
+		if (w==null|| w.equals("")){
+			throw new DomainException("woord mag niet leeg zijn");
+		}
 		for(int i=0 ; i<w.length(); i++){
 			HintLetter temp =new HintLetter(w.charAt(i));
 			System.out.println(woord);
