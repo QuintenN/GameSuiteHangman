@@ -8,7 +8,7 @@ import org.junit.Test;
 
 
 public class HintWoordTest {
-
+	
 	@Test
 	public void HintWoord_moet_HintWoord_aanmaken_waarvan_alle_letters_verborgen_zijn() {
 		String woord = "test";
@@ -68,7 +68,6 @@ public class HintWoordTest {
 		assertEquals("t _ _ t", hint.toString());
 		assertFalse(hint.isGeraden());
 	}
-	
 	@Test 
 	public void isGeraden_geeft_true_als_alle_letters_geraden(){
 		HintWoord hint = new HintWoord("test");

@@ -12,8 +12,11 @@ public class HintWoord {
 	}
 
 	public String getWoord() {
-		
-		return toString();
+		String res = "";
+		for(HintLetter i : this.woord){
+			res += i.getLetter();
+		}
+		return res;
 	}
 
 	private void setWoord(String w) {
@@ -22,18 +25,27 @@ public class HintWoord {
 		}
 		for(int i=0 ; i<w.length(); i++){
 			HintLetter temp =new HintLetter(w.charAt(i));
-			System.out.println(woord);
 			woord.add(temp);
 		}
 	}
 	public boolean raad(char letter){
 		boolean raden= false;
+		System.out.println("test");
 		for(HintLetter i : woord){
-			if(i.raad(letter) ){
+			
+			if(i.raad(letter)){
+
 				raden = true; 
+			}
+			this.setGeraden(true);
+			for(HintLetter j: woord){
+			
+				if(!j.isGeraden()) this.setGeraden(false);
+				
 			}
 		
 		}
+		System.out.println(raden);
 		return raden;
 	}
 
@@ -49,9 +61,11 @@ public class HintWoord {
 	@Override
 	public String toString() {
 		String result="";
-		for(HintLetter i : woord ){
-			result+="" + i;
+		result += woord.get(0).toChar();
+		for(int i = 1; i<woord.size(); i++){
+			result+=" " + woord.get(i).toChar();
 		}
+		System.out.println(result);
 		return result;
 	}
 	
