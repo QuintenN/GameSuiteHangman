@@ -45,7 +45,7 @@ public class LijnStuk extends Vorm{
 
 	@Override
 	public void teken(Graphics graphics) {
-		// TODO Auto-generated method stub
+		graphics.drawLine(startPunt.getX(), startPunt.getY(), eindPunt.getX(), eindPunt.getY());
 		
 	}
 }

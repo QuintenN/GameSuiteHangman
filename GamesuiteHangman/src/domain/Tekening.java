@@ -12,7 +12,6 @@ public class Tekening implements Drawable{
 	private static final int MAX_X = 399;
 	private static final int MAX_Y = 399;
 	
-	
 	public Tekening(String naam) {
 	setNaam(naam);
 	vormen = new ArrayList<>();
@@ -34,7 +33,9 @@ public class Tekening implements Drawable{
 				if(l.getEindPunt().getX()<this.getMinX() || l.getEindPunt().getX()>this.getMaxX() || l.getEindPunt().getY()<this.getMinY() || l.getEindPunt().getY()>this.getMaxY()){
 					throw new DomainException();
 				}
+				
 			}
+			vormen.add(vorm);
 		}
 		if(vorm instanceof Driehoek){
 			Driehoek d = (Driehoek) vorm;
@@ -45,12 +46,14 @@ public class Tekening implements Drawable{
 					}
 				}
 			}
+			vormen.add(vorm);
 		}
 		if(vorm instanceof Cirkel){
 			Cirkel c = (Cirkel) vorm;
 			if(c.getMiddelpunt().getX()-c.getRadius()<this.getMinX() || c.getMiddelpunt().getY()-c.getRadius()<this.getMinY() || c.getMiddelpunt().getX()+c.getRadius()>this.getMaxX() || c.getMiddelpunt().getY()+c.getRadius()>this.getMaxY()){
 				throw new DomainException();
 			}
+			vormen.add(vorm);
 		}
 		if(vorm instanceof Rechthoek){
 			Rechthoek h = (Rechthoek) vorm;
@@ -59,8 +62,8 @@ public class Tekening implements Drawable{
 					throw new DomainException();
 				}
 			}
+			vormen.add(vorm);
 		}
-		vormen.add(vorm);
 	}
 	
 	public int getMinX() {
@@ -117,7 +120,9 @@ public class Tekening implements Drawable{
 
 	@Override
 	public void teken(Graphics graphics) {
-		// TODO Auto-generated method stub
+		for(Vorm v : vormen){
+			v.teken(graphics);
+		}
 		
 	}
 }
